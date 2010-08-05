@@ -31,7 +31,7 @@ namespace Fluid
                     string.Format("Could not find a window titled \"{0}\".", title), assertionFailureException);
             }
 
-            return new Window {AutomationElement = shell};
+            return new Window { AutomationElement = shell };
         }
 
         private AutomationElement GetWindowFromDesktop(string title)
@@ -41,8 +41,8 @@ namespace Fluid
                     "The owning process exited before the window was found.");
 
             return Parent.FindFirst(TreeScope.Children,
-                                    new PropertyCondition(AutomationElement.NameProperty,
-                                                          title));
+                new AndCondition(new PropertyCondition(AutomationElement.NameProperty, title),
+                                 new PropertyCondition(AutomationElement.ProcessIdProperty, _process.Id)));
         }
 
         public WindowFinder OwnedBy(Process process)
