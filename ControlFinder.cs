@@ -22,7 +22,7 @@ namespace Fluid
             return
                 Parent.
                     FindChildren(MeetingConditions).
-                    Select(element => new TControl {AutomationElement = element}).
+                    Select(element => new TControl { AutomationElement = element }).
                     GetEnumerator();
         }
 
