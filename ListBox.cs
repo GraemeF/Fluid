@@ -1,8 +1,13 @@
-﻿using System.Collections.Generic;
-
-namespace Fluid
+﻿namespace Fluid
 {
-    public class ListBox : Control<ListBox>, IContainer
+    #region Using Directives
+
+    using System.Collections.Generic;
+
+    #endregion
+
+    public class ListBox : Control<ListBox>, 
+                           IContainer
     {
         public IEnumerable<ListBoxItem> Items
         {

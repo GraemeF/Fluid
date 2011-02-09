@@ -1,6 +1,7 @@
 ﻿namespace Fluid
 {
-    public class Window : Control<Window>, IContainer
+    public class Window : Control<Window>, 
+                          IContainer
     {
     }
 }

@@ -1,15 +1,15 @@
-﻿using System.Windows.Automation;
-
-namespace Fluid
+﻿namespace Fluid
 {
+    #region Using Directives
+
+    using System.Windows.Automation;
+
+    #endregion
+
     public abstract class Control<TControl> : IControl
         where TControl : IControl, new()
     {
-        #region IControl Members
-
         public AutomationElement AutomationElement { get; set; }
-
-        #endregion
 
         public bool IsVisible
         {
@@ -21,10 +21,13 @@ namespace Fluid
             AutomationElement element = container.AutomationElement;
             foreach (string automationId in path)
                 element =
-                    element.FindChildByCondition(new PropertyCondition(AutomationElement.AutomationIdProperty,
+                    element.FindChildByCondition(new PropertyCondition(AutomationElement.AutomationIdProperty, 
                                                                        automationId));
 
-            return new ControlFinder<TControl> {Parent = element};
+            return new ControlFinder<TControl>
+                       {
+                           Parent = element
+                       };
         }
     }
 }

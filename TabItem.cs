@@ -1,6 +1,7 @@
 ﻿namespace Fluid
 {
-    public class TabItem : Control<TabItem>, IContainer
+    public class TabItem : Control<TabItem>, 
+                           IContainer
     {
         public void Activate()
         {

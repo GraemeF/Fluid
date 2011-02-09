@@ -1,7 +1,11 @@
-﻿using System.Windows.Input;
-
-namespace Fluid
+﻿namespace Fluid
 {
+    #region Using Directives
+
+    using System.Windows.Input;
+
+    #endregion
+
     public class Keyboard
     {
         public static void Press(Key key)
